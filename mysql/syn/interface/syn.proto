@@ -1,0 +1,16 @@
+syntax="proto2";
+option cc_generic_services = true;
+
+package peleus_demo.mysql.syn;
+
+message MysqlSynRequest {
+    required string message = 1;
+};
+
+message MysqlSynResponse {
+    required string message = 1;
+};
+
+service MysqlSynService {
+    rpc query(MysqlSynRequest) returns (MysqlSynResponse);
+};

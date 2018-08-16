@@ -1,0 +1,16 @@
+syntax="proto2";
+option cc_generic_services = true;
+
+package peleus_demo.http.syn;
+
+message HttpSynRequest {
+    required string message = 1;
+};
+
+message HttpSynResponse {
+    required string message = 1;
+};
+
+service HttpSynService {
+    rpc query(HttpSynRequest) returns (HttpSynResponse);
+};

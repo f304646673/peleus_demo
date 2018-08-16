@@ -1,0 +1,16 @@
+syntax="proto2";
+option cc_generic_services = true;
+
+package peleus_demo.redis.syn;
+
+message RedisSynDemoRequest {
+    required string message = 1;
+};
+
+message RedisSynDemoResponse {
+    required string message = 1;
+};
+
+service RedisSynDemoService {
+    rpc query(RedisSynDemoRequest) returns (RedisSynDemoResponse);
+};

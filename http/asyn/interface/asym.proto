@@ -1,0 +1,16 @@
+syntax="proto2";
+option cc_generic_services = true;
+
+package peleus_demo.http.asyn;
+
+message HttpAsynRequest {
+    required string message = 1;
+};
+
+message HttpAsynResponse {
+    required string message = 1;
+};
+
+service HttpAsynService {
+    rpc query(HttpAsynRequest) returns (HttpAsynResponse);
+};
