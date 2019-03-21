@@ -40,7 +40,13 @@ void Service::query(
     http_request.set_conn_name("163_com");
     http_request.set_uri("/");
     http_request.set_post(false);
+	
+	/*不需要返回结果
+	asyn_rpc_without_response<HttpVisitorService_Stub, HttpVisitorServiceResponse>(NULL,
+        &HttpVisitorService_Stub::query, &http_request);
+	*/
 
+	// 半同步
     HttpVisitorServiceResponse http_response;
     SemiSyncRpc sync;
     sync.add<HttpVisitorService_Stub>(NULL, &HttpVisitorService_Stub::query,
